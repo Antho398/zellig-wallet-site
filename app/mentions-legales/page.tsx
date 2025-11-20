@@ -1,25 +1,40 @@
 import Link from "next/link";
+import Image from "next/image";
 import LanguageToggle from "@/components/LanguageToggle";
 import { ContentSection } from "@/components/ContentSection";
+import { FormattedLegalContent } from "@/components/FormattedLegalContent";
 
 export default function MentionsLegalesPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header avec toggle langue */}
-      <header className="w-full flex justify-end p-6">
-        <LanguageToggle />
+    <div className="min-h-screen bg-slate-50 text-slate-900 relative">
+      {/* Barre du haut - Même style que page principale */}
+      <header className="relative z-10 w-full border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo-cameleon-fondblanc.png"
+              alt="Zelig Logo"
+              width={48}
+              height={48}
+              className="rounded-full"
+              priority
+            />
+            <span className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
+              Zelig Wallet
+            </span>
+          </div>
+          <LanguageToggle />
+        </div>
       </header>
 
       {/* Contenu */}
-      <main className="px-6 py-12 md:py-20 max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+      <main className="relative z-10 px-6 py-12 md:py-20 max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
           <ContentSection section="footer.mentionsLegales" />
         </h1>
         
-        <div className="prose prose-lg max-w-none text-gray-700">
-          <p className="text-lg leading-relaxed">
-            [Texte à insérer depuis les documents légaux]
-          </p>
+        <div className="prose prose-lg max-w-none text-slate-700 whitespace-pre-line">
+          <FormattedLegalContent section="legal.mentionsLegales" />
         </div>
 
         {/* Lien retour */}
@@ -33,25 +48,28 @@ export default function MentionsLegalesPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="px-6 py-8 bg-gray-900 text-white mt-12">
-        <div className="max-w-4xl mx-auto">
-          <nav className="flex flex-col sm:flex-row justify-center items-center gap-6">
+      {/* Footer - Même style que page principale */}
+      <footer className="relative z-10 border-t border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-4 md:flex-row md:px-10 md:py-5 text-sm md:text-base text-slate-500">
+          <span className="order-2 md:order-1">
+            <ContentSection section="footer.credit" />
+          </span>
+          <nav className="order-1 flex gap-8 md:order-2">
             <Link
               href="/cgu"
-              className="hover:text-gray-300 transition-colors text-sm md:text-base"
+              className="hover:text-slate-700 transition-colors"
             >
               <ContentSection section="footer.cgu" />
             </Link>
             <Link
               href="/mentions-legales"
-              className="hover:text-gray-300 transition-colors text-sm md:text-base"
+              className="hover:text-slate-700 transition-colors"
             >
               <ContentSection section="footer.mentionsLegales" />
             </Link>
             <Link
               href="/politique-de-confidentialite"
-              className="hover:text-gray-300 transition-colors text-sm md:text-base"
+              className="hover:text-slate-700 transition-colors"
             >
               <ContentSection section="footer.politiqueConfidentialite" />
             </Link>

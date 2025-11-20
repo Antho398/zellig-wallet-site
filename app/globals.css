@@ -60,3 +60,29 @@ body {
 .star-twinkle {
   animation: star-twinkle ease-in-out infinite;
 }
+
+/* Animation pour les étoiles filantes - mouvement plus aléatoire */
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) scale(0.8);
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(50%) translateY(50%) scale(1);
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) translateY(100%) scale(1.2);
+  }
+}
+
+.shooting-star {
+  animation: shooting-star ease-in-out infinite;
+}

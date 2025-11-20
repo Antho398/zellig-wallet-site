@@ -11,7 +11,7 @@ export function StoreButtons() {
   const androidImage = lang === 'fr' ? '/image 9.png' : '/image 11.png';
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex items-center gap-3">
       {/* iOS */}
       <a
         href="#"
@@ -21,9 +21,9 @@ export function StoreButtons() {
         <Image
           src={iosImage}
           alt="Télécharger sur l'App Store"
-          width={180}
-          height={60}
-          className="object-contain h-[60px] w-auto"
+          width={160}
+          height={53}
+          className="object-contain h-[53px] w-auto"
         />
       </a>
 
@@ -36,9 +36,9 @@ export function StoreButtons() {
         <Image
           src={androidImage}
           alt="Disponible sur Google Play"
-          width={180}
-          height={60}
-          className="object-contain h-[60px] w-auto"
+          width={160}
+          height={53}
+          className="object-contain h-[53px] w-auto"
         />
       </a>
     </div>

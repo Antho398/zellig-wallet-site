@@ -13,20 +13,20 @@ export default function Home() {
         <StarrySky />
       </div>
 
-      {/* Barre du haut - Augmentée */}
-      <header className="relative z-10 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-8">
-          <div className="flex items-center gap-4">
-        <Image
+      {/* Barre du haut - Réduite et blanche */}
+      <header className="relative z-10 w-full border-b border-white/20 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
+          <div className="flex items-center gap-3">
+            <Image
               src="/logo-cameleon-fondblanc.png"
-              alt="Zellig Logo"
-              width={56}
-              height={56}
+              alt="Zelig Logo"
+              width={48}
+              height={48}
               className="rounded-full"
-          priority
-        />
-            <span className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
-              Zellig Wallet
+              priority
+            />
+            <span className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
+              Zelig Wallet
             </span>
           </div>
           <LanguageToggle />
@@ -39,24 +39,24 @@ export default function Home() {
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
             {/* Texte hero */}
             <div className="flex-1">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-600 mb-4">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-400 mb-4">
                 <ContentSection section="hero.kicker" />
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4 drop-shadow-lg">
                 <ContentSection section="hero.title" />
           </h1>
-              <p className="text-base md:text-lg text-slate-700 leading-relaxed max-w-xl">
+              <p className="text-base md:text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-md">
                 <ContentSection section="hero.subtitle" />
               </p>
             </div>
 
-            {/* Visuel téléphone - Amélioré sans contour noir */}
+            {/* Visuel téléphone */}
             <div className="flex-1 flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-amber-400/20 via-cyan-400/15 to-transparent blur-3xl -z-10" />
                 <Image
-                  src="/visuel-2025-site-zelig.jpg"
-                  alt="Zellig Wallet App"
+                  src="/phone-site-zelig.png"
+                  alt="Zelig Wallet App"
                   width={360}
                   height={720}
                   priority
@@ -69,10 +69,10 @@ export default function Home() {
 
         {/* BLOC 1 : Zelig créatrice + Outil marketing - Fusionnés */}
         <section className="px-4 md:px-8 lg:px-12 pb-12 md:pb-16">
-          <div className="mx-auto max-w-7xl rounded-3xl bg-white shadow-sm ring-1 ring-slate-100 px-6 py-10 md:px-10 md:py-12 lg:px-12 lg:py-14">
+          <div className="mx-auto max-w-6xl rounded-3xl bg-white shadow-sm ring-1 ring-slate-100 px-6 py-10 md:px-10 md:py-12 lg:px-12 lg:py-14">
             <div className="grid gap-12 md:grid-cols-2 md:gap-16">
               {/* Colonne gauche : Zelig créatrice */}
-              <div>
+              <div className="text-center md:text-left">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-4">
                   <ContentSection section="aboutZelig.title" />
                 </h2>
@@ -82,7 +82,7 @@ export default function Home() {
               </div>
 
               {/* Colonne droite : Outil marketing */}
-              <div>
+              <div className="text-center md:text-left">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mb-4">
                   <ContentSection section="marketingTool.title" />
                 </h2>
@@ -104,45 +104,50 @@ export default function Home() {
 
         {/* BLOC 2 : Référence + Stores - Côte à côte mais séparés */}
         <section className="px-4 md:px-8 lg:px-12 pb-16 md:pb-20">
-          <div className="mx-auto max-w-7xl grid gap-8 md:grid-cols-2 md:gap-12">
+          <div className="mx-auto max-w-6xl grid gap-8 md:grid-cols-2 md:gap-12">
             {/* Carte Ils nous font confiance */}
             <div className="rounded-3xl bg-white shadow-sm ring-1 ring-slate-100 px-6 py-10 md:px-10 md:py-12 lg:px-12 lg:py-14">
-              <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 mb-6 text-center">
                 <ContentSection section="trust.title" />
               </h2>
-              <div className="rounded-2xl border border-slate-100 bg-slate-50 px-6 py-6 md:px-8 md:py-8">
-                <p className="text-sm md:text-base text-slate-700 mb-4 text-left">
-                  <ContentSection section="trust.bestOfYachting" />
-                </p>
-                <div className="flex justify-start">
-                  <Image
-                    src="/logo-3.png"
-                    alt="Best of Yachting Logo"
-                    width={100}
-                    height={50}
-                    className="object-contain"
-                  />
+              <div className="rounded-2xl border bg-white" style={{ borderColor: '#091D5C', borderWidth: '1px' }}>
+                <div className="px-6 py-8 md:px-8 md:py-10">
+                  <div className="text-sm md:text-base font-medium text-slate-700 mb-4 text-left">
+                    <div>Best of Yachting</div>
+                    <div>Wallet</div>
+                  </div>
+                  <div className="flex justify-start">
+                    <Image
+                      src="/logo-3.png"
+                      alt="Best of Yachting Logo"
+                      width={100}
+                      height={50}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Carte Disponible sur */}
             <div className="rounded-3xl bg-white shadow-sm ring-1 ring-slate-100 px-6 py-10 md:px-10 md:py-12 lg:px-12 lg:py-14">
-              <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 mb-6 text-center">
                 <ContentSection section="availability.title" />
               </h2>
-              <p className="text-sm md:text-base text-slate-700 mb-6">
+              <p className="text-sm md:text-base text-slate-700 mb-6 text-center">
                 <ContentSection section="availability.description" />
               </p>
-              <StoreButtons />
+              <div className="flex justify-center">
+                <StoreButtons />
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer - Augmenté et textes décollés */}
+      {/* Footer - Agrandi */}
       <footer className="relative z-10 border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 py-8 md:flex-row md:px-12 md:py-10 text-sm md:text-base text-slate-500">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-6 md:flex-row md:px-10 md:py-7 text-sm md:text-base text-slate-500">
           <span className="order-2 md:order-1">
             <ContentSection section="footer.credit" />
           </span>

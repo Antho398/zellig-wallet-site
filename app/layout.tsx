@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zellig Wallet",
-  description: "Zellig Wallet - L'outil marketing 3.0 unique & innovant",
+  title: "Zelig Wallet",
+  description: "Zelig Wallet - L'outil marketing 3.0 unique & innovant",
 };
 
 export default function RootLayout({
